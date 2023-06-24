@@ -14,7 +14,7 @@ exports.up = function(knex) {
           .defaultTo(false)
     })
     .createTable('tasks', tbl=>{
-      tbl.increments('taks_id')
+      tbl.increments('task_id')
       tbl.string('task_description',128)
           .notNullable()
       tbl.string('task_notes', 128)
@@ -39,7 +39,7 @@ exports.up = function(knex) {
           .onUpdate('CASCADE')
           .onDelete('CASCADE');
         tbl.integer('resource_id')
-          .references('resources_id')
+          .references('resource_id')
           .inTable('resources')
           .onUpdate('CASCADE')
           .onDelete('CASCADE');
