@@ -10,7 +10,6 @@ exports.up = function(knex) {
             .notNullable()
       tbl.string('project_description','longtext') 
       tbl.boolean('project_completed')
-          .notNullable()
           .defaultTo(false)
     })
     .createTable('tasks', tbl=>{
@@ -19,7 +18,6 @@ exports.up = function(knex) {
           .notNullable()
       tbl.string('task_notes', 128)
       tbl.boolean('task_completed')
-          .notNullable()
           .defaultTo(false)
       tbl.integer('project_id')
           .unsigned()
